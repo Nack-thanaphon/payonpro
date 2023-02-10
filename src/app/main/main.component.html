@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application | มาสี่จ่ายสาม</title>
+  </head>
+  <body>
+    <div class="container p-3">
+      <div class="row m-0 p-0 p-3 my-auto h-full my-5">
+        <div class="col-12 m-0 p-0">
+          <div class="shadow-sm p-3">
+            <div class="text-start mb-3 pb-4">
+              <h1 class="m-0 p-0 text-success">PayOnPro :)</h1>
+              <small class="text-muted m-0 p-0">Build from Angular</small>
+            </div>
+            <div class="alert alert-info">
+              <p class="m-0 p-0">สวัสดีครับ เว็บแอพลิเคชั่นนี้ สร้างเพื่อทดสอบ AngularFramework + Java SpringBooot</p>
+            </div>
+            <br />
+            <p class="pb-3 text-muted m-0 p-0">โปรโมชั่น : มา 4 จ่าย 3</p>
+            <input
+              type="text"
+              #calvalue 
+              class="form-control mb-3"
+              placeholder="กรอกราคาเต็มจำนวน"
+            />
+            <div class="row m-0 p-0">
+              <div class="col-12 col-sm-8 m-0 p-0 my-auto">
+                <h4 class="text-start">
+                  ยอดรวมชำระ :
+                  <span class="text-success">{{ calcualte | number }}</span>
+                  บาท
+                </h4>
+                <small *ngIf="calcualte">จ่ายคนล่ะ <span class="text-success">{{ perp  | number}}</span> บาท</small>
+              </div>
+              <div
+                class="col-12 col-sm-4 d-flex justify-content-end m-0 p-0 my-auto"
+              >
+                <button
+                  (click)="getValue(calvalue.value)"
+                  class="btn btn-success"
+                >
+                  คำนวนราคา
+                </button>
+              </div>
+              <a class="m-0 p-0" routerLink="history">ประวัติการใช้งาน</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
